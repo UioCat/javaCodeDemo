@@ -14,8 +14,8 @@ public class BackMessage<T> {
         return new BackMessage<Void>(BackEnum.REQUEST_SUCCESS);
     }
 
-    public static BackMessage<String> success(String message) {
-        return new BackMessage<>(BackEnum.REQUEST_SUCCESS, message);
+    public static <T> BackMessage<T> success(T context) {
+        return new BackMessage<T>(BackEnum.REQUEST_SUCCESS, context);
     }
 
     public BackMessage(BackEnum backEnum) {
