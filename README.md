@@ -11,5 +11,11 @@
 2. 将com.hanxun.demo修改为对应的包名
 3. 将所有 todo 修改为对应的是数据
 4. 使用mybatis-generator:generate 生成代码
-5. 开始 happy CURD
+5. **生成代码后，需要自己在Mapper类上加上@Mapper注解**
+6. 开始 happy CURD
+## 推荐辅助工具
+可以使用：https://www.uiofield.top  来直接生成SQL创表命令
+## 注意事项(踩坑记录)
+1. 使用User作为实体类名会出现问题，不建议使用
+
 
