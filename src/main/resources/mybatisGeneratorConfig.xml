@@ -9,7 +9,7 @@
         </commentGenerator>
 
         <!-- 数据库的相关配置 -->
-        <!--  todo   需要填入数据库密码   -->
+        <!--  todo   需要填入数据库密码、IP、库名   -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://47.100.56.146:3306/multimedia"
                         userId="root"
@@ -20,20 +20,22 @@
         </javaTypeResolver>
 
         <!-- 实体类生成的位置 -->
+        <!--  todo  修改项目名-->
         <javaModelGenerator targetPackage="com.hanxun.demo.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="false"/>
         </javaModelGenerator>
 
+        <!-- Mapper 接口文件的位置 -->
+        <!--  todo  修改项目名-->
+        <javaClientGenerator targetPackage="com.hanxun.demo.dao" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
         <!-- *Mapper.xml 文件的位置 -->
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
-
-        <!-- Mapper 接口文件的位置 -->
-        <javaClientGenerator targetPackage="com.hanxun.demo.dao" targetProject="src/main/java" type="XMLMAPPER">
-            <property name="enableSubPackages" value="false"/>
-        </javaClientGenerator>
 
         <!-- 相关表的配置 -->
         <!--todo    加入表配置-->
