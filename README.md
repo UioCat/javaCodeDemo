@@ -1,6 +1,6 @@
 ## 功能列表
 1. 包括了自动生成代码的generator
-2. 导入了lombok、mysql+jdbc+mybatis、redis、aop包
+2. 导入了lombok、mysql+jdbc+mybatis、redis、aop、fastjson包
 3. 全局异常捕捉
 4. 自定义异常类
 5. 基础的异常情况枚举
