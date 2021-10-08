@@ -22,8 +22,12 @@
 	<dependencies>
 
 		<!--	基础配置包	-->
-		<!-- lombok、mysql+jdbc+mybatis、redis、aop、fastjson-->
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<!-- lombok、mysql+jdbc+mybatis、redis、aop、fastjson、auth0-->
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>3.8.2</version>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
