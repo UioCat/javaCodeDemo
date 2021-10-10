@@ -39,18 +39,18 @@ public class TokenUtils {
             //秘钥及加密算法
             Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
             //设置头部信息
-            Map<String,Object> header = new HashMap<>();
-            header.put("typ","JWT");
-            header.put("alg","HS256");
+            Map<String, Object> header = new HashMap<>();
+            header.put("typ", "JWT");
+            header.put("alg", "HS256");
             //携带username，password信息，生成签名
             token = JWT.create()
-                .withHeader(header)
-                .withClaim(FIELD_NAME, id)
-                .withExpiresAt(date)
-                .sign(algorithm);
-        }catch (Exception e){
+                    .withHeader(header)
+                    .withClaim(FIELD_NAME, id)
+                    .withExpiresAt(date)
+                    .sign(algorithm);
+        } catch (Exception e) {
             log.warn("get token fail, id:{}", id, e);
-            return  null;
+            return null;
         }
         return token;
     }
