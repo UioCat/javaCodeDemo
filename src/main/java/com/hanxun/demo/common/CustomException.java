@@ -1,6 +1,5 @@
 package com.hanxun.demo.common;
 
-
 import java.io.Serializable;
 
 public class CustomException extends RuntimeException implements Serializable {
