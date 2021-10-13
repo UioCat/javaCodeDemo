@@ -9,3 +9,8 @@ spring:
     url: jdbc:mysql://112.124.25.39:3306/test?cuseUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false
     username: root
     password: # todo 填入数据库密码
+  redis:
+    host: 47.96.172.216
+    port: 6379
+    password: # todo 填入Redis密码
+    connect-timeout: 3000
