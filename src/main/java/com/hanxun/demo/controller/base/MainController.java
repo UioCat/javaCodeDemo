@@ -1,4 +1,4 @@
-package com.hanxun.demo.controller;
+package com.hanxun.demo.controller.base;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

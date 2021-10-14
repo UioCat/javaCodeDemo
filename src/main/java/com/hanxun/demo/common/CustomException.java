@@ -21,7 +21,6 @@ public class CustomException extends RuntimeException implements Serializable {
      */
     private String errorMsg;
 
-
     public CustomException() {
     }
 
