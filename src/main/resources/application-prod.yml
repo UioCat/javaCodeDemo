@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # todo 修改数据库IP和库名
-    url: jdbc:mysql://112.124.25.39:3306/test?cuseUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://112.124.25.39:3306/test?cuseUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&useSSL=false
     username: root
     password: # todo 填入数据库密码
   redis:
