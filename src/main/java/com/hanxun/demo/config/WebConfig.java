@@ -5,6 +5,12 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+
+/**
+ * @author han xun
+ * @date 2021-10-08 14:42
+ * @description 跨域配置
+ */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
     @Override

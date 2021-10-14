@@ -6,6 +6,11 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author han xun
+ * @date 2021-10-08 14:42
+ * @description 缓存工具类 redis
+ */
 @Component
 public final class CacheUtils {
 
