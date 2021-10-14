@@ -2,7 +2,9 @@ package com.hanxun.demo.common;
 
 
 /**
- * @author uio
+ * @author han xun
+ * @date 2021-10-08 14:42
+ * @description 统一返回数据类型
  */
 public class BackMessage<T> {
 

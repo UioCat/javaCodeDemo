@@ -2,6 +2,11 @@ package com.hanxun.demo.common;
 
 import java.io.Serializable;
 
+/**
+ * @author han xun
+ * @date 2021-10-08 14:42
+ * @description 自定义异常
+ */
 public class CustomException extends RuntimeException implements Serializable {
 
     private static final long serialVersionUID = -8244995466985754075L;
