@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author han xun
- * @date 2021-10-08 14:42
- * @description 缓存工具类 redis
+ * Ddate 2021-10-08 14:42
+ * Ddescription 缓存工具类 redis
  */
 @Component
 public final class CacheUtils {

@@ -2,8 +2,8 @@ package com.hanxun.demo.common;
 
 /**
  * @author han xun
- * @date 2021-10-08 14:42
- * @description 错误码枚举
+ * Date 2021-10-08 14:42
+ * Description 错误码枚举
  */
 public enum BackEnum {
 

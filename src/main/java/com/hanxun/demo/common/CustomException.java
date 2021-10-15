@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 /**
  * @author han xun
- * @date 2021-10-08 14:42
- * @description 自定义异常
+ * Date 2021-10-08 14:42
+ * Description 自定义异常
  */
 public class CustomException extends RuntimeException implements Serializable {
 

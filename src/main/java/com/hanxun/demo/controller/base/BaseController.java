@@ -5,8 +5,8 @@ import com.hanxun.demo.utils.TokenUtils;
 
 /**
  * @author han xun
- * @date 2021-10-14 09:55
- * @description
+ * Date 2021-10-14 09:55
+ * Description 基础Controller
  */
 public class BaseController {
 

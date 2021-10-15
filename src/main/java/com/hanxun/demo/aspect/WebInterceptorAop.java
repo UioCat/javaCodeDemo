@@ -18,13 +18,13 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author han xun
- * @date 2021-10-08 14:42
- * @description HTTP AOP
+ * Date 2021-10-08 14:42
+ * Description HTTP AOP
  */
 @Aspect
 @Slf4j
 @Component
-public class HttpAOP {
+public class WebInterceptorAop {
 
     public final static String TOKEN = "token";
 

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author han xun
- * @date 2021-10-14 09:56
- * @description
+ * Date 2021-10-14 09:56
+ * Description: 健康监测
  */
 @Controller
 public class MainController {

@@ -13,8 +13,8 @@ import org.yaml.snakeyaml.constructor.DuplicateKeyException;
 
 /**
  * @author han xun
- * @date 2021-10-08 14:42
- * @description
+ * Date 2021-10-08 14:42
+ * Description
  */
 @ControllerAdvice
 @Slf4j
