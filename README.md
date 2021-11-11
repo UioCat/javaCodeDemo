@@ -10,6 +10,8 @@
 7. 登陆态（TokenUtils）
 8. redis缓存整合 && 使用redis缓存设置分布式锁
 9. pageHelper分页查询插件
+## demo
+分支origin/typical_example为demo分支，基本可做到直接运行，查看如何使用
 ## 使用说明/步骤
 1. 现在数据库建立对应的是实体类用于生成DAL
 2. 将com.hanxun.demo修改为对应的包名
