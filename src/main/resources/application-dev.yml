@@ -1,8 +1,6 @@
 spring:
   mvc:
     static-path-pattern: /static/** #遇到任何路径都去/static/下找
-  thymeleaf:
-    cache: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # todo 修改数据库IP和库名
