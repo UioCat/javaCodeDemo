@@ -12,5 +12,4 @@
         <!--        开启驼峰命名create_time->createTime-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
-
 </configuration>

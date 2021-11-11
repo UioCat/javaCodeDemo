@@ -7,14 +7,12 @@
 6. 所有Controller的AOP，打印请求入参和出参 
 7. 登陆态（TokenUtils）
 8. redis缓存整合 && 使用redis缓存设置分布式锁
+9. pageHelper分页查询
 ## 使用说明/步骤
-1. 现在数据库建立对应的是实体类用于生成DAL
-2. 将com.hanxun.demo修改为对应的包名
-3. 将所有 todo 修改为对应的是数据
-4. 使用mybatis-generator:generate 生成代码
-5. **生成代码后，需要自己在Mapper类上加上@Mapper注解**
-6。在Mapper文件上都加上@Mapper注解
-7. 开始 happy CURD
+1. 在MySQL中创建demo_tes库，并将demo_test.sql导入数据库
+2. 将数据库密码设置成123456,. 或 将项目中两处数据库密码对应修改
+3. 将Redis密码设置称123456,. 或 将项目中一处Redis密码对应修改
+4. 即可运行项目
 ## 推荐辅助工具
 可以使用：https://www.uiofield.top  来直接生成SQL创表命令
 ## 注意事项(踩坑记录)
