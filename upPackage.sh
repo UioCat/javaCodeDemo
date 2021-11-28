@@ -1,14 +1,18 @@
 #!/bin/bash
 # 服务器密码
 PASSWORD=
+# war包名
+PACKAGE_NAME=demo.war
+# IP数组
+IP_ARRAY="{192.168.31.102 192.168.31.103}"
 
 mvn clean install -Dmaven.test.skip=true
-mv ./target/*.war ./target/demo.war
+mv ./target/*.war ./target/$PACKAGE_NAME
 
 /usr/bin/expect <<EOF
-set IP_ARRAY {192.168.31.102 192.168.31.103}
-foreach IP \$IP_ARRAY {
-  spawn scp ./target/monitor.war root@\$IP:/usr/java/apache-tomcat-9.0.33/webapps
+
+foreach IP $IP_ARRAY {
+  spawn scp ./target/$PACKAGE_NAME root@\$IP:/usr/java/apache-tomcat-9.0.33/webapps
   expect {
    "(yes/no)?" {
      send "yes\n"
