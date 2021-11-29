@@ -1,19 +1,23 @@
 <!DOCTYPE generatorConfiguration PUBLIC
         "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
-        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"
+        >
 <generatorConfiguration>
+
+    <!-- 数据库数据源配置 -->
+    <properties resource="application-dev.properties"/>
     <context id="context" targetRuntime="MyBatis3">
+
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
             <property name="suppressDate" value="false"/>
         </commentGenerator>
 
-        <!-- 数据库的相关配置 -->
-        <!--  todo   需要填入数据库密码、IP、库名   -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/demo_test"
-                        userId="root"
-                        password="123456,."/>
+        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+                        connectionURL="${spring.datasource.url}"
+                        userId="${spring.datasource.username}"
+                        password="${spring.datasource.password}">
+        </jdbcConnection>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -39,5 +43,8 @@
         <table tableName="tb_consumer" domainObjectName="UserDO" enableCountByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" enableUpdateByExample="true">
         </table>
+<!--        <table tableName="tb_consumer" domainObjectName="UserDO" enableCountByExample="true" enableDeleteByExample="true"-->
+<!--               enableSelectByExample="true" enableUpdateByExample="true">-->
+<!--        </table>-->
     </context>
 </generatorConfiguration>
