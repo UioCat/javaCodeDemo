@@ -23,7 +23,7 @@
 ## 推荐辅助工具
 可以使用：https://www.uiofield.top  来直接生成SQL创表命令
 ## 注意事项(踩坑记录)
-1. 分多次生成DAL文件可能会导致报错，建议每次都直接所有表都生成一遍
+1. 分多次生成DAL文件可能会导致报错，建议每次先删除xml文件，再全部重新生成
 2. 在使用mybatis-generator插件时，可能会提示格式错误，在最后加一行，再试试
 ```
 <!--
@@ -38,4 +38,5 @@
 	<scope>provided</scope>
 </dependency>
 ```
+4. 数据库有字段为`TEXT`字段时，查询需要使用`selectByExampleWithBLOBs`方法，否则TEXT格式字段查询结果会为 null
 
