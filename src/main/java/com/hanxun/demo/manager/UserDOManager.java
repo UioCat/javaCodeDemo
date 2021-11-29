@@ -8,7 +8,6 @@ import com.hanxun.demo.entity.UserDOExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 
 /**
  * @author han xun      
