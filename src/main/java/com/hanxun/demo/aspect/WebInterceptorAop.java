@@ -77,7 +77,7 @@ public class WebInterceptorAop {
         } catch (CustomException e) {
             CustomException customException = (CustomException)e;
             log.warn("自定义异常捕获:{} ", customException.getMessage(), e);
-            return new BackMessage<Void>(customException.getErrorCode(), customException.getMessage());
+            return new BackMessage<Void>(customException.getErrorCode(), customException.getErrorMsg());
         } catch (HttpRequestMethodNotSupportedException e) {
             log.warn("捕捉浏览器错误请求异常,", e);
             return new BackMessage<Void>(BackEnum.REQUEST_METHOD_ERROR);
