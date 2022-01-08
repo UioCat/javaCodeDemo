@@ -22,7 +22,12 @@
 	<dependencies>
 
 		<!--	基础配置包	-->
-		<!-- lombok、mysql+jdbc+mybatis、redis、aop、fastjson、auth0、pageHelper -->
+		<!--validation、lombok、mysql+jdbc+mybatis、redis、aop、fastjson、auth0、pageHelper -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+			<version>2.6.2</version>
+		</dependency>
 		<dependency>
 			<groupId>com.auth0</groupId>
 			<artifactId>java-jwt</artifactId>
