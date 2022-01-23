@@ -12,6 +12,7 @@ mv ./target/*.war ./target/$PACKAGE_NAME
 /usr/bin/expect <<EOF
 
 foreach IP $IP_ARRAY {
+  set timeout -1
   spawn scp ./target/$PACKAGE_NAME root@\$IP:/usr/java/apache-tomcat-9.0.33/webapps
   expect {
    "(yes/no)?" {
