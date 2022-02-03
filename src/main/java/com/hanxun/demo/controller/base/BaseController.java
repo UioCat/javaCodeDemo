@@ -1,5 +1,7 @@
 package com.hanxun.demo.controller.base;
 
+import com.hanxun.demo.common.BackEnum;
+import com.hanxun.demo.common.CustomException;
 import com.hanxun.demo.utils.ThreadLocalUtils;
 import com.hanxun.demo.utils.TokenUtils;
 
@@ -15,6 +17,10 @@ public class BaseController {
      * @return
      */
     public Long getUserId() {
-        return ThreadLocalUtils.getCurrentUser().getId();
+        UserToken currentUser = ThreadLocalUtils.getCurrentUser();
+        if (currentUser == null) {
+            throw new CustomException(BackEnum.UNAUTHORIZED);
+        }
+        return currentUser.getId();
     }
 }
