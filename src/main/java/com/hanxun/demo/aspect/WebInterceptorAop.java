@@ -43,7 +43,7 @@ public class WebInterceptorAop {
 
         // 进入请求，打印入惨
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
-        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes)requestAttributes;
+        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) requestAttributes;
         HttpServletRequest request = servletRequestAttributes.getRequest();
         String method = request.getMethod();
         StringBuilder params = new StringBuilder();
@@ -75,8 +75,9 @@ public class WebInterceptorAop {
             o = proceedingJoinPoint.proceed();
             return o;
         } catch (CustomException e) {
-            CustomException customException = (CustomException)e;
-            log.warn("自定义异常捕获:{} ", customException.getMessage(), e);
+            CustomException customException = (CustomException) e;
+            log.warn("自定义异常捕获, code{}, message:{} ",
+                    customException.getErrorCode(), customException.getErrorMsg(), e);
             return new BackMessage<Void>(customException.getErrorCode(), customException.getErrorMsg());
         } catch (HttpRequestMethodNotSupportedException e) {
             log.warn("捕捉浏览器错误请求异常,", e);
