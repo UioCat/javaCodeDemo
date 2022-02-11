@@ -3,8 +3,12 @@ package com.hanxun.demo.utils;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.hanxun.demo.common.BackEnum;
+import com.hanxun.demo.common.CustomException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -62,14 +66,18 @@ public class TokenUtils {
      * @return
      */
     public static Long getIdAndVerify(String token) {
-        try {
-            Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
-            JWTVerifier verifier = JWT.require(algorithm).build();
-            DecodedJWT jwt = verifier.verify(token);
-            return jwt.getClaim(FIELD_NAME).asLong();
-        } catch (Exception e) {
-            log.warn("verify token fail, token:{}", token, e);
-            return null;
+        if (StringUtils.isEmpty(token)) {
+            throw new CustomException(BackEnum.UNAUTHORIZED);
         }
+        Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
+        JWTVerifier verifier = JWT.require(algorithm).build();
+        DecodedJWT jwt = null;
+        try {
+            jwt = verifier.verify(token);
+        } catch (JWTVerificationException e) {
+            log.warn("verify token fail, token:{}", token, e);
+            throw new CustomException(BackEnum.UNAUTHORIZED);
+        }
+        return jwt.getClaim(FIELD_NAME).asLong();
     }
 }

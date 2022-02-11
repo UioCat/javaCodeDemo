@@ -40,10 +40,6 @@ public enum BackEnum {
      */
     REQUEST_METHOD_ERROR(405, "请求方式错误"),
 
-    /**
-     * 密码错误
-     */
-    PWD_ERROR(401, "密码错误"),
 
     /**
      * 用户名不存在
@@ -64,7 +60,10 @@ public enum BackEnum {
      * 数据库已存在该数据
      */
     REPETITION(1004, "数据重复添加"),
-
+    /**
+     * 密码错误
+     */
+    PWD_ERROR(1005, "密码错误"),
 
     ;
 

@@ -61,24 +61,22 @@ public class WebInterceptorAop {
             }
         }
         log.info("start execute url:{}, method:{}, params:{}", request.getRequestURI(), method, params);
-        // 登陆态操作
-        String token = request.getHeader(TOKEN);
-        if (token != null) {
-            UserToken userToken = new UserToken();
-            userToken.setId(TokenUtils.getIdAndVerify(token));
-            ThreadLocalUtils.addCurrentUser(userToken);
-        }
 
         // 执行业务逻辑
         Object o = null;
         try {
+            // 登陆态操作
+            String token = request.getHeader(TOKEN);
+            if (token != null) {
+                UserToken userToken = new UserToken();
+                userToken.setId(TokenUtils.getIdAndVerify(token));
+                ThreadLocalUtils.addCurrentUser(userToken);
+            }
             o = proceedingJoinPoint.proceed();
             return o;
         } catch (CustomException e) {
-            CustomException customException = (CustomException) e;
-            log.warn("自定义异常捕获, code{}, message:{} ",
-                    customException.getErrorCode(), customException.getErrorMsg(), e);
-            return new BackMessage<Void>(customException.getErrorCode(), customException.getErrorMsg());
+            log.warn("自定义异常捕获:{} ", e.getErrorMsg(), e);
+            return new BackMessage<Void>(e.getErrorCode(), e.getErrorMsg());
         } catch (HttpRequestMethodNotSupportedException e) {
             log.warn("捕捉浏览器错误请求异常,", e);
             return new BackMessage<Void>(BackEnum.REQUEST_METHOD_ERROR);
