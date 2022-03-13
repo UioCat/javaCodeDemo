@@ -10,6 +10,7 @@
 7. 登陆态（TokenUtils）
 8. redis缓存整合 && 使用redis缓存设置分布式锁
 9. pageHelper分页查询插件
+10. 自动打包推送到服务器的Tomcat上
 ## demo
 分支origin/typical_example为demo分支，基本可做到直接运行，查看如何使用
 ## 使用说明/步骤
@@ -20,6 +21,7 @@
 5. **生成代码后，需要自己在Mapper类上加上@Mapper注解**
 6. 在Mapper文件上都加上@Mapper注解
 7. 开始 happy CURD
+8. 运行时加入环境参数允许 `-Dspring.profiles.active=pre`
 ## 推荐辅助工具
 可以使用：https://www.uiofield.top  来直接生成SQL创表命令
 ## 注意事项(踩坑记录)

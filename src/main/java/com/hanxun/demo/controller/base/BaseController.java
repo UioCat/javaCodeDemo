@@ -3,7 +3,6 @@ package com.hanxun.demo.controller.base;
 import com.hanxun.demo.common.BackEnum;
 import com.hanxun.demo.common.CustomException;
 import com.hanxun.demo.utils.ThreadLocalUtils;
-import com.hanxun.demo.utils.TokenUtils;
 
 /**
  * @author han xun

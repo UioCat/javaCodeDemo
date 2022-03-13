@@ -6,7 +6,7 @@ PACKAGE_NAME=demo.war
 # IP数组
 IP_ARRAY="{192.168.31.102 192.168.31.103}"
 
-mvn clean install -Dmaven.test.skip=true
+mvn clean install -Dmaven.test.skip=true -D profile.active=dev
 mv ./target/*.war ./target/$PACKAGE_NAME
 
 /usr/bin/expect <<EOF
