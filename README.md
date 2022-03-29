@@ -41,4 +41,6 @@
 </dependency>
 ```
 4. 数据库有字段为`TEXT`字段时，查询需要使用`selectByExampleWithBLOBs`方法，否则TEXT格式字段查询结果会为 null
+5. 启动时报错：`Error parsing Mapper XML`，删掉所有XML文件重新生成DAL文件
+6. 生成DAL文件后，Mapper类上需要加上@Mapper注解
 
