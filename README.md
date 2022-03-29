@@ -18,6 +18,8 @@
 ## 注意事项(踩坑记录)
 1. 分多次生成DAL文件可能会导致报错，建议每次都直接所有表都生成一遍
 2. 在使用mybatis-generator插件时，可能会提示格式错误，在最后加一行，再试试
+3. 启动时报错：`Error parsing Mapper XML`，删掉所有XML文件重新生成DAL文件
+4. 生成DAL文件后，Mapper类上需要加上@Mapper注解
 ```
 <!--
 <table tableName="department" domainObjectName="Department" enableCountByExample="false"  enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
