@@ -62,28 +62,26 @@ public final class CacheService {
      * @return true or false
      */
     public boolean lock(String key, String requestId, String expireTime, int retryTimes) {
-        if (retryTimes <= 0) { retryTimes = 1; }
+        if (retryTimes < 0) { retryTimes = 0; }
 
         try {
             int count = 0;
             while (true) {
                 String result = stringRedisTemplate.execute(getLockRedisScript, argsStringSerializer,
-                    resultStringSerializer,
-                    Collections.singletonList(key), requestId, expireTime);
-                log.debug("result:{},type:{}", result, result.getClass().getName());
+                        resultStringSerializer,
+                        Collections.singletonList(key), requestId, expireTime);
+                log.debug("result:{}, type:{}", result, result.getClass().getName());
                 if (EXEC_RESULT.equals(result)) {
                     return true;
                 } else {
-                    count++;
                     if (retryTimes == count) {
-                        log.warn("has tried {} times , failed to acquire lock for key:{},requestId:{}", count, key,
-                            requestId);
+                        log.warn("has tried {} times, failed to acquire lock for key:{}, requestId:{}", count, key,
+                                requestId);
                         return false;
-                    } else {
-                        log.warn("try to acquire lock {} times for key:{},requestId:{}", count, key, requestId);
-                        Thread.sleep(100);
-                        continue;
                     }
+                    count++;
+                    log.warn("try to acquire lock {} times for key:{}, requestId:{}", count, key, requestId);
+                    Thread.sleep(100);
                 }
             }
         } catch (InterruptedException e) {
